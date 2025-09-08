@@ -18,7 +18,9 @@
 <div class="jumbotron">
 <ul class="list-group">
     {% for product in products %}
-    <li class="list-group-item">{{product}}</li>
+    <li class="list-group-item">
+        <a href="{{url_for('products.edit_view', product_id=product.id)}}">{{product.name}}- {{ "%0.2f" | format(product.price)}}</a>
+    </li>
     {% endfor %}
 </ul>
 </div>
